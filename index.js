@@ -1,7 +1,4 @@
-const { mathUtils, formatGreeting } = require('./utils')
+import getPosts, { getPostsLength } from './postController.js'
 
-console.log(mathUtils.add(1, 2))
-console.log(mathUtils.subtract(1, 2))
-console.log(mathUtils.multiply(1, 2))
-console.log(mathUtils.divide(1, 2))
-console.log(formatGreeting('John'))
+console.log(getPosts())
+console.log(`Total posts: ${getPostsLength()}`)
