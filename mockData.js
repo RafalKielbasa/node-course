@@ -1,0 +1,42 @@
+export const users = [
+  {
+    id: 1,
+    username: 'john_doe',
+    email: 'john@example.com',
+    age: 28,
+    role: 'user',
+    registeredAt: '2023-01-10',
+  },
+  {
+    id: 2,
+    username: 'jane_smith',
+    email: 'jane@example.com',
+    age: 32,
+    role: 'admin',
+    registeredAt: '2023-02-15',
+  },
+  {
+    id: 3,
+    username: 'bob_wilson',
+    email: 'bob@example.com',
+    age: 25,
+    role: 'user',
+    registeredAt: '2023-03-20',
+  },
+  {
+    id: 4,
+    username: 'alice_brown',
+    email: 'alice@example.com',
+    age: 30,
+    role: 'moderator',
+    registeredAt: '2023-04-05',
+  },
+  {
+    id: 5,
+    username: 'mike_jones',
+    email: 'mike@example.com',
+    age: 35,
+    role: 'user',
+    registeredAt: '2023-05-12',
+  },
+]
