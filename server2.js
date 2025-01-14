@@ -35,11 +35,32 @@ const notFoundHandler = (req, res) => {
   res.end(JSON.stringify({ message: 'Route not found' }))
 }
 
+const creatUserHandler = (req, res) => {
+  let body = ''
+  req.on('data', (chunk) => {
+    body += chunk.toString()
+  })
+  req.on('end', () => {
+    const newUser = JSON.parse(body)
+    users.push(newUser)
+    res.statusCode = 201
+    res.end(JSON.stringify(newUser))
+  })
+}
+
 const server = createServer((req, res) => {
   jsonMiddleware(req, res, () => {
     logger(req, res, () => {
       const requestUrl = req.url
       const requestMethod = req.method
+
+      if (requestMethod === 'POST') {
+        if (requestUrl === '/api/users') {
+          creatUserHandler(req, res)
+        } else {
+          notFoundHandler(req, res)
+        }
+      }
 
       if (requestMethod === 'GET') {
         if (requestUrl === '/api/users') {
